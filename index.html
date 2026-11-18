@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <meta name="theme-color" content="#f5efe7">
+
+  <meta name="description"
+        content="Daymark - Your daily task manager.">
+
+  <title>Daymark — To-Do List</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <main class="container">
+
+    <!-- WEBSITE HEADER -->
+    <header class="header">
+      <p class="eyebrow">YOUR DAILY SPACE</p>
+
+      <h1>Daymark<span>.</span></h1>
+
+      <p class="subtitle">
+        Make room for what matters.
+      </p>
+    </header>
+
+    <!-- MAIN TASK CARD -->
+    <section class="task-card">
+
+      <!-- CARD HEADER -->
+      <div class="card-header">
+
+        <div>
+          <h2>My tasks</h2>
+          <p id="currentDate"></p>
+        </div>
+
+        <span id="taskCount" class="task-count">
+          0 left
+        </span>
+
+      </div>
+
+      <!-- ADD TASK FORM -->
+      <form id="taskForm">
+
+        <div class="form-group">
+
+          <label for="taskTitle">
+            Task title
+          </label>
+
+          <input
+            type="text"
+            id="taskTitle"
+            placeholder="What needs to get done?"
+            maxlength="100"
+            required
+          >
+
+        </div>
+
+        <!-- TIME AND DESCRIPTION -->
+        <div class="form-row">
+
+          <div class="form-group">
+
+            <label for="taskTime">
+              Time
+            </label>
+
+            <input
+              type="time"
+              id="taskTime"
+            >
+
+          </div>
+
+          <div class="form-group">
+
+            <label for="taskDescription">
+              Description
+            </label>
+
+            <textarea
+              id="taskDescription"
+              placeholder="Add details about this task..."
+              maxlength="500"
+              rows="2"
+            ></textarea>
+
+          </div>
+
+        </div>
+
+        <!-- ADD BUTTON -->
+        <button type="submit" class="add-btn">
+          + Add task
+        </button>
+
+      </form>
+
+      <!-- FILTER BUTTONS -->
+      <div class="filters">
+
+        <div class="filter-buttons">
+
+          <button
+            type="button"
+            class="filter active"
+            data-filter="all">
+            All
+          </button>
+
+          <button
+            type="button"
+            class="filter"
+            data-filter="active">
+            Active
+          </button>
+
+          <button
+            type="button"
+            class="filter"
+            data-filter="completed">
+            Completed
+          </button>
+
+        </div>
+
+        <button
+          type="button"
+          id="clearCompleted"
+          class="clear-btn">
+          Clear completed
+        </button>
+
+      </div>
+
+      <!-- TASK LIST -->
+      <div id="taskList" class="task-list"></div>
+
+      <!-- EMPTY STATE -->
+      <div id="emptyState" class="empty-state">
+
+        <div class="empty-icon">✓</div>
+
+        <h3>All clear for now</h3>
+
+        <p>Add a task above to get started.</p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
